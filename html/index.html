@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>host.example.com - Public MTproxy server</title>
+    <meta name="twitter:title" content="host.example.com - Public MTproxy server">
+    <meta name="twitter:description" content="Connect to Telegram when using restricted connections. Public, unlimited, ad-free Telegram MTProxy server for social good. ">
+    <meta name="twitter:image" content="assets/img/200px-Telegram_logo.svg.png">
+    <meta property="og:image" content="assets/img/Telegram_logo.svg">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Connect to Telegram when using restricted connections. Public, unlimited, ad-free Telegram MTProxy server for social good. ">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/svg+xml" sizes="150x150" href="assets/img/Telegram_logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+    <div class="container-fluid setmaxwidth">
+        <header>
+            <h1 class="text-center"><strong>host.example.com</strong></h1>
+        </header>
+        <p class="lead text-center text-muted introtext">A quick introduction to this server located in Europe, Germany</p>
+        <hr>
+        <div>
+            <div class="row">
+                <div class="col text-center"><a href="tg://proxy?port=993&amp;secret=ee5c557d37ddde51c21d4577a29b88bbcc686f73742e6578616d706c652e636f6d&amp;server=host.example.com"><button class="btn btn-primary text-monospace text-capitalize text-center border rounded shadow connectbut" type="button"><i class="fa fa-telegram telegrambuttonicon"></i>&nbsp;Connect<br></button></a>
+                    <p
+                        class="text-muted">Click to add this proxy to Telegram</p>
+                </div>
+            </div>
+            <div class="row no-gutters text-left">
+                <div class="col">
+                    <p class="text-left">This is a public, unlimited, ad-free, direct&nbsp;<a href="https://telegram.org/"><strong>Telegram</strong></a> MTProxy server. The primary purpose of this proxy server is to circumvent connection issues and censorship. It is <a href="https://github.com/TelegramMessenger/MTProxy/issues/68">safe to use</a>&nbsp;and&nbsp;runs
+                        <a href="https://github.com/9seconds/mtg">9seconds/mtg</a><strong>&nbsp;</strong>server implementation written in Go. A connection is also possible by copy-pasting the code below. Please verify that your Telegram app <a href="https://telegram.org/apps">is updated</a>.<br></p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <header class="text-left h3">
+                        <p>This is a FakeTLS proxy</p>
+                    </header>
+                    <p>FakeTLS is a special type of server. It cloaks server responses as https traffic. The certificate also matches the host so that everything is valid from a firewall point of view.</p>
+                    <blockquote class="blockquote">
+                        <p class="mb-0" style="font-size: 16px;margin: 3px;"><em>This mode envelops Telegram stream in TLS so it looks (in theory) the same as any TLS1.3 traffic from DPI point of view.</em><br></p>
+                        <footer class="blockquote-footer"><a href="https://github.com/9seconds/mtg">mtg</a>&nbsp;project page README.md&nbsp;<br></footer>
+                    </blockquote>
+                    <p>In other words, this means that the traffic between the Telegram app and this proxy server is hard to distinguish between all other typical internet traffic. There's a lower chance when using this proxy of a firewall block or disconnection.<br><br>This also means you from time to time should visit this page to get the updated server secret, so that the current secret and the cloaked response match the proxy active domain.</p>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="text-right">Current Secret</td>
+                                    <td class="text-left">ee5c557d37ddde51c21d4577a29b88bbcc686f73742e6578616d706c652e636f6d</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Last updated</td>
+                                    <td class="text-left">2020-10-01</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Next update</td>
+                                    <td class="text-left">2020-12-31</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <header class="text-left h3">
+                        <p>Connection Links</p>
+                    </header>
+                    <p>For special cases. Click or copy-paste to explicitly connect to server IP.</p>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Type</th>
+                                    <th class="text-center">Link</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>tg link</strong></td>
+                                    <td class="text-center"><a href="tg://proxy?port=993&amp;secret=ee5c557d37ddde51c21d4577a29b88bbcc686f73742e6578616d706c652e636f6d&amp;server=host.example.com"><code class="text-monospace text-break text-lowercase text-center border rounded-0 d-sm-flex d-lg-flex d-xl-flex justify-content-sm-center justify-content-lg-center justify-content-xl-center align-items-xl-center graybg">tg://<br>proxy?port=993&amp;secret=ee5c557d37ddde51c21d4577a29b88bbcc686f73742e6578616d706c652e636f6d&amp;server=host.example.com<br></code></a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>tg url</strong></td>
+                                    <td class="text-center"><a href="https://t.me/proxy?port=993&amp;secret=ee5c557d37ddde51c21d4577a29b88bbcc686f73742e6578616d706c652e636f6d&amp;server=host.example.com"><code class="text-monospace text-break text-lowercase text-center border rounded-0 d-sm-flex d-lg-flex d-xl-flex justify-content-sm-center justify-content-lg-center justify-content-xl-center align-items-xl-center graybg">https://t.me/proxy?port=993&amp;secret=ee5c557d37ddde51c21d4577a29b88bbcc686f73742e6578616d706c652e636f6d&amp;server=host.example.com</code></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
