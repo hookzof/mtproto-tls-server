@@ -1,4 +1,4 @@
-# mtprx
+# mtproto-tls-server 
 
 ## 1. Install Nginx
 
