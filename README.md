@@ -27,6 +27,11 @@ You can adapt the `html` directory from this repository.
 ```
 apt install certbot python-certbot-nginx
 certbot --nginx
+```
+
+The Let's Encrypt certificate needs to be updated approximately every 90 days. Set things up to check for the necessity of an update.
+
+```
 certbot renew --dry-run
 ```
 
@@ -66,6 +71,8 @@ mtg generate-secret -c host.example.com tls
 ```
 
 This returns `<SECRET>`.
+
+Generating the secret needs to be repeated every 90 days, when the Let's Encrypt certificate is renewed.
 
 ## 8. Reconfigure Nginx
 
@@ -139,3 +146,5 @@ journalctl -u mtg
 ## 12. Update web content
 
 Update hostname, port, secret, start date and expiry date in web contents.
+
+The website needs to be updated every 90 days, when the Let's Encrypt certificate and the secret are renewed.
