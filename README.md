@@ -45,7 +45,9 @@ go build
 cp mtg /usr/local/bin
 ```
 
-## 7. Configure mtg
+## 7. Generate secret for mtg
+
+Replace `host.example.com` by you server's actual hostname.
 
 ```
 mtg generate-secret -c host.example.com tls
