@@ -1,18 +1,29 @@
 # mtproto-tls-server 
 
+These instructions document how to create a Telegram MTProto proxy server with fake TLS name equal to actual hostname. This repository includes a sample web site `html` to announce the proxy details to users. 
+
+You will need a server and a domain name. Create a DNS record for the hostname pointing to the server IP address. 
+
+These instructions are for Debian/Ubuntu logged in as root.
+
 ## 1. Install Nginx
 
-Install web server from repositories.
+Install the Nginx web server from the repositories.
 
 ```
+apt update && apt upgrade
 apt install nginx
 ```
 
 Edit `/etc/nginx/sites-available/default`.
 
-Insert actual server name.
+Insert your actual hostname.
 
-Restart Nginx.
+```
+        server_name host.example.com;
+```
+
+Restart Nginx with your hostname defined in the server configuration.
 
 ```
 systemctl restart nginx
@@ -23,6 +34,8 @@ systemctl restart nginx
 You can adapt the `html` directory from this repository.
 
 ## 3. Get certificate from Let's Encrypt
+
+Follow the instructions on https://certbot.eff.org to install a real certificate on your server.
 
 ```
 apt install certbot python-certbot-nginx
@@ -37,7 +50,7 @@ certbot renew --dry-run
 
 ## 4. Install Go language
 
-See https://golang.org/doc/install for documentation.
+See https://golang.org/doc/install for documentation. At the time of writing, the current version of Go language is 1.15.2.
 
 ```
 wget https://golang.org/dl/go1.15.2.linux-amd64.tar.gz
@@ -55,6 +68,8 @@ git clone https://github.com/9seconds/mtg.git
 ```
 
 ## 6. Build mtg
+
+See https://github.com/9seconds/mtg for documentation.
 
 ```
 cd mtg
@@ -131,12 +146,16 @@ WantedBy=multi-user.target
 
 ## 10. Run mtg
 
+Run the mtg service.
+
 ```
 systemctl enable mtg
 systemctl start mtg
 ```
 
 ## 11. Check mtg
+
+Check that mtg is active and running, and review messages.
 
 ```
 systemctl status mtg
@@ -145,6 +164,6 @@ journalctl -u mtg
 
 ## 12. Update web content
 
-Update hostname, port, secret, start date and expiry date in web contents.
+Now that everything is running, update the hostname, port, secret, start date and expiry date in your web site's contents.
 
-The website needs to be updated every 90 days, when the Let's Encrypt certificate and the secret are renewed.
+You will need to update your web site every 90 days, when the Let's Encrypt certificate and the secret are renewed.
